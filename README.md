@@ -3,7 +3,7 @@
 
 A RAG (Retrieval-Augmented Generation) chatbot that acts as a friendly visitor assistant for Mandai Wildlife Reserve. Mandy answers questions about the parks, tickets, animals, dining, getting there, and conservation by retrieving real content from the official Mandai website.
 
-Built for the Mandai Wildlife Group AI Specialist assessment using free, open-source tools.
+Built for an assessment for Mandai Wildlife Group.
 
 ## What Mandy Can Answer
 
