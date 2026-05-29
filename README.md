@@ -1,5 +1,5 @@
 # mandai-rag-chatbot
-# Mandy — Mandai Wildlife Reserve Virtual Assistant
+# Mandy the Mandai Wildlife Reserve Virtual Assistant
 
 A RAG (Retrieval-Augmented Generation) chatbot that acts as a friendly visitor assistant for Mandai Wildlife Reserve. Mandy answers questions about the parks, tickets, animals, dining, getting there, and conservation by retrieving real content from the official Mandai website.
 
