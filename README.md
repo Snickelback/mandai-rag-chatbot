@@ -51,7 +51,7 @@ python chatbot.py
 
 | File | Description |
 |---|---|
-| `chatbot.py` | Main RAG chatbot — Mandy visitor assistant |
+| `chatbot.py` | Main RAG chatbot aka Mandy visitor assistant |
 | `requirements.txt` | Python dependencies |
 | `DESIGN.md` | Architecture, prompt engineering, and data strategy |
 | `TRANSCRIPT.md` | AI-assisted development conversation transcript |
