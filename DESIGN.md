@@ -85,26 +85,26 @@ Pages that fail to load are gracefully skipped using a `try/except` block so the
 ## Embeddings
 
 - **Model:** `sentence-transformers/all-MiniLM-L6-v2` via `langchain_community.embeddings.HuggingFaceEmbeddings`
-- **Why:** Lightweight, fast, free, and runs locally with no API key needed. Performs well on semantic similarity tasks which is the core of RAG retrieval.
-- **How:** Each chunk is converted into a 384-dimensional vector. Semantically similar text produces vectors that are close together in vector space, enabling meaningful search.
+- **Why?** Lightweight, fast, free, and runs locally with no API key needed. Performs well on semantic similarity tasks which is the core of RAG retrieval.
+- **How?** Each chunk is converted into a 384-dimensional vector. Semantically similar text produces vectors that are close together in vector space, enabling meaningful search.
 
 ---
 
 ## Vector Storage
 
 - **Tool:** FAISS (Facebook AI Similarity Search) via `langchain_community.vectorstores`
-- **Why:** Free, runs entirely in memory, fast for small to medium document collections, and ideal for prototyping.
-- **Retrieval:** User query is embedded using the same model, then compared against all stored chunk vectors. Top 3 most similar chunks (`top_k=3`) are returned as context for the LLM.
+- **Why?** Free, runs entirely in memory, fast for small to medium document collections, and ideal for prototyping.
+- **Retrieval Process:** User query is embedded using the same model, then compared against all stored chunk vectors. Top 3 most similar chunks (`top_k=3`) are returned as context for the LLM.
 
 ---
 
 ## Prompt Engineering
 
 The system prompt is designed to:
-1. Give the chatbot a friendly persona — "Mandy", a visitor assistant for Mandai Wildlife Reserve
+1. Give the chatbot a friendly persona."Mandy", a visitor assistant for Mandai Wildlife Reserve.
 2. Instruct it to use retrieved context as the primary source of truth
-3. Allow it to fall back on general knowledge if context is insufficient, while directing visitors to www.mandai.com for accuracy
-4. Avoid the overly strict "I don't have enough information" response that made early versions unhelpful
+3. Allow it to fall back on general knowledge if context is insufficient, while directing visitors to www.mandai.com for accuracy.
+4. Avoid the overly strict "I don't have enough information" response that made early versions unhelpful.
 
 ```
 You are a friendly and helpful visitor assistant for Mandai Wildlife Reserve in Singapore.
@@ -132,7 +132,7 @@ Answer:
 
 - **Provider:** Groq (free tier)
 - **Model:** `llama-3.1-8b-instant` — Meta's Llama 3.1 8B model, fast and reliable for instruction-following and question answering
-- **Why Groq over HuggingFace Inference API:** HuggingFace's free router had limited model support and inconsistent availability. Groq provides sub-second response times and reliable free access to Llama 3.1.
+- **Why Groq over HuggingFace Inference API?** HuggingFace's free router had limited model support and inconsistent availability. I ran out of tokens quite early and had to look at alternatives. Groq provides sub-second response times and reliable free access to Llama 3.1.
 - **API key:** Loaded securely from environment variable `GROQ_API_KEY` — never hardcoded in the source code
 
 ---
@@ -140,7 +140,6 @@ Answer:
 ## Security
 
 - The Groq API key is stored as an environment variable (`os.environ.get("GROQ_API_KEY")`) and never hardcoded in the source code
-- The `.gitignore` file excludes the `venv/` folder and any `.env` files from being pushed to GitHub
 
 ---
 
