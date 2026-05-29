@@ -1,10 +1,10 @@
 # TRANSCRIPT.md — AI-Assisted Development Conversation
 
-> This is the Markdown transcript of my conversation with Claude (AI assistant) while designing and building Mandy, the Mandai Wildlife Reserve virtual assistant chatbot.
+> This is the transcript of my conversation with Claude (AI assistant) while designing and building Mandy, the Mandai Wildlife Reserve virtual assistant chatbot. My final instruction to claude was to build this transcript file of everything we talked about.
 
 ---
 
-**Me:** I need to build a simple RAG chatbot that can answer questions from a website or a library of documents. I want to use free tools since I don't have an OpenAI API key. What stack should I use?
+**Me:** I need to build a simple RAG chatbot that can answer questions from a website or a library of documents. I want to use free tools as I dont have an OpenAI API key right now. What stack should I use?
 
 **Claude:** Great project! For a free stack, here's what I'd recommend:
 
@@ -17,7 +17,7 @@ This stack is completely free and good enough for a working prototype.
 
 ---
 
-**Me:** How should I split the documents into chunks? What size should I use?
+**Me:** How should I do the chunking? Could you give size info?
 
 **Claude:** Use LangChain's `RecursiveCharacterTextSplitter` with:
 
@@ -27,7 +27,7 @@ This stack is completely free and good enough for a working prototype.
 
 ---
 
-**Me:** How do I make sure the LLM doesn't make things up and only answers from the retrieved context?
+**Me:** How do I make sure the LLM isnt making things up and only answering from the retrieved context?
 
 **Claude:** This is controlled through your prompt. Tell the model explicitly to use only the provided context:
 
@@ -57,7 +57,7 @@ This makes the chatbot much more useful while still grounding it in real retriev
 
 ---
 
-**Me:** I'm scraping a website as my data source. The text has a lot of noise — menu items, footers, script tags. How do I clean it up?
+**Me:** I am scraping a website as my data source. The text has a lot of noise, like the header and stuff. How do I clean it up?
 
 **Claude:** Use BeautifulSoup to remove noisy tags before extracting text:
 
@@ -74,7 +74,7 @@ This removes scripts, styles, navigation menus, and footers, then strips empty l
 
 ---
 
-**Me:** The chatbot only scraped one page and got 15 chunks which isn't enough. How do I feed it more data?
+**Me:** The chatbot only scraped one page and got 15 chunks which is not enough. How do I feed it more data?
 
 **Claude:** Loop through a list of URLs and combine all the chunks before building the vector store:
 
@@ -95,7 +95,7 @@ The `try/except` means any page that fails to load gets skipped silently so the 
 
 ---
 
-**Me:** How should I handle the API key securely so it doesn't get exposed on GitHub?
+**Me:** I need to make this file public. How should I handle the API key so that I dont expose it to everyone and compromise myself?
 
 **Claude:** Never hardcode the key in your source code. Use an environment variable instead:
 
@@ -124,5 +124,9 @@ Also add a `.gitignore` file that excludes `venv/` and `.env` so they never get 
 5. **Scraping can be blocked** — use official APIs or pre-downloaded content for reliability in production.
 
 ---
+
+**Me:** Could you generate an entire transcript of what we talked about here as a .md file I can upload on my github?
+
+**Claude:** Absolutely! A transcript is a great way to show your thought process and how you used AI as a tool to build the chatbot. The file is ready to download!
 
 *End of transcript.*
